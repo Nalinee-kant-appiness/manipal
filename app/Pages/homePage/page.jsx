@@ -61,8 +61,13 @@ const HomePage = () => {
                   src={item.img}
                   width={500}
                   height={330}
-                  className="rounded-xl h-60"
+                  className="rounded-xl h-60 cursor-pointer"
                   alt="trending disscussion image"
+                  onClick={() =>
+                    router.push(
+                      item.routeLink
+                    )
+                  }
                 />
               </div>
               <div className="flex flex-col gap-3">
@@ -130,7 +135,7 @@ const HomePage = () => {
                   height={300}
                   alt="blogs image"
                   className="cursor-pointer"
-                  onClick={()=>router.push(item.routeLink)}
+                  onClick={() => router.push(item.routeLink)}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -163,7 +168,12 @@ const HomePage = () => {
                   </p>
                 </div>
                 <div>
-                  <p onClick={()=>router.push(item.routeLink)} className="underline text-green-600 cursor-pointer">Read More</p>
+                  <p
+                    onClick={() => router.push(item.routeLink)}
+                    className="underline text-green-600 cursor-pointer"
+                  >
+                    Read More
+                  </p>
                 </div>
                 <div className="flex">
                   <div className="flex gap-2">
@@ -203,7 +213,7 @@ const HomePage = () => {
 
       <div className=" w-full h-[800px] p-10 bg-gray-100 mb-10 min-w-[1332px]">
         <h1 className="text-4xl text-black font-bold min-w-max pb-10">
-        Medical Tales
+          Medical Tales
         </h1>
 
         <div className=" w-full h-[600px] flex flex-wrap gap-6">
@@ -216,7 +226,7 @@ const HomePage = () => {
                   height={330}
                   className="rounded-xl h-60 cursor-pointer min-w-[100px]"
                   alt="trending disscussion image"
-                  onClick={()=>router.push(item.routeLink)}
+                  onClick={() => router.push(item.routeLink)}
                 />
               </div>
               <div className="flex flex-col gap-1">
@@ -249,7 +259,12 @@ const HomePage = () => {
                   </p>
                 </div>
                 <div>
-                  <p onClick={()=>router.push(item.routeLink)} className="underline text-green-600 cursor-pointer">Read More</p>
+                  <p
+                    onClick={() => router.push(item.routeLink)}
+                    className="underline text-green-600 cursor-pointer"
+                  >
+                    Read More
+                  </p>
                 </div>
                 <div className="flex">
                   <div className="flex gap-2">

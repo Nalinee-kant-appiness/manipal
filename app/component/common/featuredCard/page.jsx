@@ -10,7 +10,7 @@ return (
         {data?.map((item)=>(
         <div className="bg-white w-[420px] h-[500px] rounded-t-2xl" key={item.id}>
             <div className="rounded-3xl">
-                <Image src={item.img} width={420} height={200} className="rounded-t-2xl" alt={`${item.alt}`}/>
+                <Image src={item.img} width={420} height={200} onClick={()=>router.push(item.routeLink)} className="rounded-t-2xl cursor-pointer" alt={`${item.alt}`}/>
             </div>
             <div>
                 <div className="flex flex-col p-5 gap-7">
