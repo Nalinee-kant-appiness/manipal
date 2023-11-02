@@ -55,7 +55,7 @@ const CustomFooter = () => {
           <div className="flex flex-col">
             {footerMainTopics.map((item) => (
               <div key={item.id}>
-                <p className={`text-white`}>{item.name}</p>
+                <p className={`text-white text-right`}>{item.name}</p>
               </div>
             ))}
           </div>
