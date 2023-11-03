@@ -7,6 +7,7 @@ import {
   featuredCardData,
   medicalTales,
   trendingDiscussionData,
+  videoDiariesData,
 } from "@/lib/homePage";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -63,11 +64,7 @@ const HomePage = () => {
                   height={330}
                   className="rounded-xl h-60 cursor-pointer"
                   alt="trending disscussion image"
-                  onClick={() =>
-                    router.push(
-                      item.routeLink
-                    )
-                  }
+                  onClick={() => router.push(item.routeLink)}
                 />
               </div>
               <div className="flex flex-col gap-3">
@@ -239,13 +236,13 @@ const HomePage = () => {
                   />
                   <div>
                     <p className="font-semibold text-black text-base">
-                      Manipal Hospitals
+                      {item.hospitalName}
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-5">
-                  <small className="text-xs">POSTED ON</small>
-                  <small className="text-xs">MAY 12 2023</small>
+                  <small className="text-xs">{item.postedKey}</small>
+                  <small className="text-xs">{item.postedValue}</small>
                 </div>
                 <div>
                   <h2 className="w-72 truncate overflow-ellipsis font-semibold text-xl text-blue-800">
@@ -296,6 +293,107 @@ const HomePage = () => {
               router.push(
                 "https://www.manipalcommunityconnect.in/medical?search="
               )
+            }
+            className="w-44 h-12 bg-white border border-blue-800 font-semibold text-blue-800 text-lg rounded-xl hover:bg-blue-600 hover:text-white"
+          >
+            View All
+          </Button>
+        </div>
+      </div>
+      <div className="p-10">
+        <h1 className="text-4xl text-black font-bold min-w-max pb-10">
+          Video Diaries
+        </h1>
+        {videoDiariesData.map((item) => (
+          <div key={item.id} className="w-[400px] h-[400px] bg-gray-100 rounded-xl ">
+            <div className="flex gap-2 items-center pb-3 pl-3 pt-3">
+              <div>
+                <Image
+                  src={item.profileImage}
+                  width={40}
+                  height={40}
+                  alt="devi M"
+                />
+              </div>
+              <div>
+                <p className="text-black font-semibold">Devi M</p>
+                <p className="text-black text-xs">Devi M</p>
+              </div>
+            </div>
+            <Image
+              src={item.img}
+              width={400}
+              height={200}
+              alt="video image"
+              className="h-[230px]"
+            />
+
+            <div className="p-3">
+              <h2 className="w-96 truncate overflow-ellipsis font-semibold text-xl text-black">
+                {item.heading}
+              </h2>
+            </div>
+            <div className="flex justify-center">
+              <div className="flex gap-2">
+                <Image
+                  src="https://www.manipalcommunityconnect.in/images/lifesOnUnchecked.svg"
+                  width={18}
+                  height={18}
+                  alt="message icon"
+                />
+              </div>
+              <div className="flex gap-2 ml-1">
+                <p>{item.noOfMessages}</p>
+                <Image
+                  src="/component/hompage/message.svg"
+                  width={18}
+                  height={18}
+                  alt="message icon"
+                />
+              </div>
+              <div className="flex gap-2 ml-1">
+                <p>{item.noOfconnection}</p>
+                <Image
+                  src="/component/hompage/connect.svg"
+                  width={18}
+                  height={18}
+                  alt="message icon"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+        <div className="flex justify-center pt-10 pb-10">
+          <Button
+            onClick={() =>
+              router.push(
+                "https://www.manipalcommunityconnect.in/video?search="
+              )
+            }
+            className="w-44 h-12 bg-white border border-blue-800 font-semibold text-blue-800 text-lg rounded-xl hover:bg-blue-600 hover:text-white"
+          >
+            View All
+          </Button>
+        </div>
+      </div>
+
+      <div className="p-10 w-full h-[550px] bg-gray-100 ">
+        <h1 className="text-4xl text-black font-bold min-w-max pb-10">
+          Audio Diaries
+        </h1>
+        <div className="flex gap-4">
+          {[1, 2, 3].map((item) => (
+            <div
+              key={item}
+              className="bg-gray-300 w-[460px] h-[250px] rounded-xl"
+            ></div>
+          ))}
+        </div>
+
+        <div className="flex justify-center pt-20 pb-10">
+          <Button
+            onClick={() =>
+              router.push("https://www.manipalcommunityconnect.in/audio?search=")
             }
             className="w-44 h-12 bg-white border border-blue-800 font-semibold text-blue-800 text-lg rounded-xl hover:bg-blue-600 hover:text-white"
           >

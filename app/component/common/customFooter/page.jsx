@@ -52,7 +52,7 @@ const CustomFooter = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col justify-end gap-1">
             {footerMainTopics.map((item) => (
               <div key={item.id}>
                 <p className={`text-white text-right`}>{item.name}</p>
