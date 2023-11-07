@@ -377,7 +377,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="p-10 w-full h-[550px] bg-gray-100 ">
+      <div className="p-10 w-full h-[550px] bg-gray-100 min-w-[1330px]">
         <h1 className="text-4xl text-black font-bold min-w-max pb-10">
           Audio Diaries
         </h1>
